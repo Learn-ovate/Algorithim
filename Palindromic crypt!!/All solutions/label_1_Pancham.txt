@@ -1,0 +1,58 @@
+1. Swap using a third variable:
+	
+{
+	int a,b,temp;
+	temp=a;			//third variable used as a temporary
+	a=b;
+	b=temp;
+}
+
+
+2. Swap without using a third variable:
+
+{
+	int a,b;
+	a=a+b;
+	b=a-b;
+	a=a-b;
+}
+
+
+3. Swap using pointers:
+	
+{
+	int a,b,temp,*x,*y;	//pointer declaration
+	a=&x;
+	b=&y;
+
+	temp=*b;		//third variable used as a temporary
+	*b=*a;
+	*a=temp;
+}
+
+
+4. Swap using user-defined function:
+
+void main()
+{
+	int x,y;
+	scan x & y;
+	swap(&x,&y);		//Calling the function
+}
+void swap(int *a, int *b)	//function declaration
+{
+	int temp;
+	temp=*b;
+	*b=*a;
+	*a=temp;
+}
+
+
+5. Swap using bitwise XOR:
+
+{
+	int a,b;
+	x=x^y;			//^ is used for XORing the variables
+	y=x^y;
+	x=x^y;
+}
