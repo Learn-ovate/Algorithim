@@ -4,7 +4,7 @@
 void main()
 {
 	int no,mainflag,palflag,primeflag,i,i1,i2,sum,temp,j,countprime=0,countpal=0;
-	int final,ans=1,ans1=1,ch,ch1;
+	int final;
 	clrscr();
 	printf("\n Enter the number: ");
 	scanf("%d",&no);
@@ -23,6 +23,7 @@ void main()
 		}
 		if(sum==i)
 		{
+
 			countpal++;
 			palflag=1;
 		}
@@ -46,34 +47,9 @@ void main()
 		}
 		i++;
 	}
-	ch=no;
-	ch1=i-1;
-	while(ch!=0)
-	{
-		temp=ch%10;
-		ch=ch/10;
-		ans=ans*temp;
-	}
-	while(ch1!=0)
-	{
-		temp=ch1%10;
-		ch1=ch1/10;
-		ans1=ans1*temp;
-	}
-
-	if(ans>ans1)
-	{
-		final=ans-ans1;
-	}
-	else
-	{
-		final=ans1-ans;
-	}
-
-
-
-	printf("\n The number is %d.",i-1);
-	printf("\n Second Logic is %d.",final);
+	final=i-1;
+	printf("\n The number is %d.",final);
+	printf("\n Second Logic is %d.",(final>>5));
 
 
 	getch();
