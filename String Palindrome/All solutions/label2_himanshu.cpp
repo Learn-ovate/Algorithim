@@ -9,13 +9,16 @@ int main()
 {
 	int arr[10];
 	int i;
+	int n;
+	cout << "Enter the Total number of variables:";
+	cin >> n;
 	cout << "Enter the numbers:";
-	for(i=0;i<5;i++)
+	for(i=0;i<n;i++)
 	{
 		cin >> arr[i];
 	}
-	MergeSort(arr,0,4);
-	for(i=0;i<5;i++)
+	MergeSort(arr,0,n-1);
+	for(i=0;i<n;i++)
 	{
 		cout <<  arr[i] << endl;
 	}
