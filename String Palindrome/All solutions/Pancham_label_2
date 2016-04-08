@@ -1,0 +1,51 @@
+#include<iostream> 
+using namespace std; 
+ 
+void MergeSort(int *,int,int); //Declaring the merge function for left and right extremes
+void Merge(int *,int,int,int); //Declaring merge function for left, middle and right.
+//Program starts 
+int main() 
+{ 
+  int arr[10]; 
+ 	int i; 
+ 	int n; 
+ 	cout<<"Enter the total numbers to sort: "; //Prompt to enter the length of the list
+ 	cin>>n; 
+ 	cout<<"Enter the numbers:"; //Prompt to enter the elements of the list
+ 	for(i=0;i<n;i++) 
+ 	{ 
+ 		cin >> arr[i]; 
+ 	} 
+ 	MergeSort(arr,0,n-1); //Calling the merge function 
+ 	for(i=0;i<n;i++) 
+ 	{ 
+ 		cout<<"The sorted list is: "<<arr[i]<<endl;  //Printing the finally sorted list
+ 	} 
+} 
+void MergeSort(int *arr,int l,int r) //User-defined merge function
+{ 
+	if(l<r) //If leftmost number < rightmost number, then split.
+	{ 
+		int m=(l+r)/2; 
+		MergeSort(arr,l,m); 
+		MergeSort(arr,m+1,r); 
+		Merge(arr,l,m,r); 
+  } 
+} 
+ 
+void Merge(int *arr,int l,int m,int r) //Second user-defined function to sort.
+{ 
+	int i,j,tmp; 
+	for(i=l;i<r;i++) //'i' is the index of leftmost number
+	{ 
+	 		for(j=i+1;j<=r;j++) //'j' is the index of rightmost number
+      { 
+ 			  if(arr[i]>arr[j]) 
+			  {	 
+ 			  	tmp=arr[i]; 
+ 			  	arr[i]=arr[j]; 
+ 			  	arr[j]=tmp; 
+ 			  } 
+   		} 
+  } 
+}
