@@ -8,6 +8,7 @@
 int  main()
 {
 	int n;
+	int  flag=0;
 	char stra[max],strb[max],stemp[max];//string A,B and subs of B
 	char sfull[(2*max)],soriginal[(2*max)];//subs of A and concated
 	int lenfull;
@@ -19,7 +20,6 @@ int  main()
 
 		int len=strlen(stra);
 		int len2=strlen(strb);
-		int  flag=0;
 
 		for(int i=1;i<=len;i++) //no of letters of 1st substring
 		{
@@ -64,5 +64,9 @@ int  main()
 		if(flag==1)
 		break;
 	}
+	if(flag==1)
+	cout<<"YES";
+	else
+	cout<<"No";
 return 0;
 }
