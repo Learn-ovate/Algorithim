@@ -5,6 +5,9 @@
 #include<string.h>
 #include<iostream>
 #define max 5
+
+using namespace std;
+
 int  main()
 {
 	int n;
